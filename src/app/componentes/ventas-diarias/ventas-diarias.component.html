@@ -1,0 +1,20 @@
+<div class="ventas-container">
+  <p class="titulo">Ventas del día</p>
+  <div class="tabla-container">
+      <table class="tabla-ventas">
+          <thead>
+              <tr>
+                  <th>Nombre</th>
+                  <th>Total de Ventas</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let nombre of ventasPorNombre | keyvalue">
+                  <td>{{ nombre.key }}</td>
+                  <td>{{ nombre.value }}</td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+  <button class="btn-ventas" (click)="dameVentas()">Ventas totales por día</button>
+</div>

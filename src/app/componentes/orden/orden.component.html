@@ -1,0 +1,56 @@
+    <div class="max-w-lg mx-auto p-8 border-4 border-blue-500 rounded-lg shadow-lg bg-white">
+        <h2 class="text-center font-bold text-2xl mb-6 text-blue-500">Agregar Pizza</h2>
+        <form (ngSubmit)="guardarPizza()" [formGroup]="formGroup" class="space-y-6">
+            <div>
+                <label for="name" class="block mb-1 font-semibold text-gray-700">Nombre:</label>
+                <input id="name" type="text" formControlName="nombre" class="input-field" placeholder="Ingrese su nombre">
+            </div>
+            <div>
+                <label for="address" class="block mb-1 font-semibold text-gray-700">Dirección:</label>
+                <input id="address" type="text" formControlName="direccion" class="input-field" placeholder="Ingrese su dirección">
+            </div>
+            <div>
+                <label for="phone" class="block mb-1 font-semibold text-gray-700">Teléfono:</label>
+                <input id="phone" type="text" formControlName="tel" class="input-field" placeholder="Ingrese su teléfono">
+            </div>
+            <div>
+                <p class="font-semibold text-gray-700 mb-2">Tamaño Pizza:</p>
+                <div class="space-y-2">
+                    <label class="flex items-center">
+                        <input type="radio" name="tamanio" formControlName="tamanio" value="Chica" class="radio-button">
+                        <span class="text-gray-600">Chica $40</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="radio" name="tamanio" formControlName="tamanio" value="Mediana" class="radio-button">
+                        <span class="text-gray-600">Mediana $80</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="radio" name="tamanio" formControlName="tamanio" value="Grande" class="radio-button">
+                        <span class="text-gray-600">Grande $120</span>
+                    </label>
+                </div>
+            </div>
+            <div>
+                <p class="font-semibold text-gray-700 mb-2">Ingredientes:</p>
+                <div class="space-y-2">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="ingrediente1" formControlName="ingrediente1" value="Jamon" class="checkbox">
+                        <span class="text-gray-600">Jamón $10</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="ingrediente2" formControlName="ingrediente2" value="Piña" class="checkbox">
+                        <span class="text-gray-600">Piña $10</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="ingrediente3" formControlName="ingrediente3" value="Champiñones" class="checkbox">
+                        <span class="text-gray-600">Champiñones $10</span>
+                    </label>
+                </div>
+            </div>
+            <div>
+                <label for="cantidad" class="block mb-1 font-semibold text-gray-700">Num. de Pizzas:</label>
+                <input id="cantidad" type="number" formControlName="cantidad" class="input-field" placeholder="Ingrese el número de pizzas">
+            </div>
+            <button type="submit" class="btn-primary">Agregar</button>
+        </form>
+    </div>

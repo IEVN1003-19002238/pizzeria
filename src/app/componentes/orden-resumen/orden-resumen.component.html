@@ -1,0 +1,32 @@
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Tamaño</th>
+                <th>Ingredientes</th>
+                <th>Num. Pizzas</th>
+                <th>SubTotal</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="ordenServicio.ordenes && ordenServicio.ordenes.length > 0">
+            <tr *ngFor="let orden of ordenServicio.ordenes; let i = index">
+                <td>{{ orden.tamanio }}</td>
+                <td>{{ orden.ingredientes.join(', ') }}</td>
+                <td>{{ orden.cantidad }}</td>
+                <td>${{ orden.subtotal.toFixed(2) }}</td>
+                <td class="text-center">
+                    <button class="button button-danger" (click)="ordenServicio.quitarOrden(i)">Quitar</button>
+                </td>
+            </tr>
+        </tbody>
+        <tbody *ngIf="!ordenServicio.ordenes || ordenServicio.ordenes.length === 0">
+            <tr>
+                <td colspan="5" class="empty-message">No hay pedidos registrados</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="flex justify-end mt-4">
+        <button class="button" (click)="guardaPedido()">Terminar Pedido</button>
+    </div>
+</div>
